@@ -4,7 +4,7 @@
 `VatAna` is an R package which is an implementation of the *Visual Assessment of Cluster Tendency (VAT)* algorithm proposed by Bezdek & Hathaway (2002).
 
 ## Introduction
-The partitioning algorithms require a priori estimate of number of clusters (k) as an input parameter, and thus the success of partitioning depends mostly on this parameter. In order to find an optimal estimation of k, the obtained results are checked by the cluster validity indices at the end of each run of successive cluster analyses. Unfortunately, this kind of cluster validation is time consuming task, and also depends on the clustering indices which may not guarantee the quality of clustering since their performances vary with complexity in data structures. In order to find an optimal  number  of  clusters  in  datasets, one  can  benefit  from the  preprocessing approaches like visual assessment of clustering tendency algorithm before  going to clustering session. The  visual assessment of clustering tendency (VAT) is a frontier algorithm which produces a gray-level image  of reordered distance  matrix showing existing clusters with dark blocks along the diagonal of it. This R package provides various functions related with VAT analysis and demonstrates its usage with the examples. 
+The partitioning algorithms require a priori estimate of number of clusters (`k`) as an input parameter, and thus the success of partitioning depends mostly on this parameter. In order to find an optimal estimation of `k`, the obtained results are checked by the cluster validity indices at the end of each run of successive cluster analyses. Unfortunately, this kind of cluster validation is time consuming task, and also depends on the clustering indices which may not guarantee the quality of clustering since their performances vary with complexity in data structures. In order to find an optimal  number  of  clusters  in  datasets, one  can  benefit  from the  preprocessing approaches like visual assessment of clustering tendency algorithm before  going to clustering session. The  visual assessment of clustering tendency (VAT) is a frontier algorithm which produces a gray-level image  of reordered distance  matrix showing existing clusters with dark blocks along the diagonal of it. This R package provides various functions related with VAT analysis and demonstrates its usage with the examples. 
 
 ## Install the package 'VatAna'
 In order to install the package `VatAna` from the GitHub repository you should first install the `devtools` package from CRAN into your local system. Then you can install the package  `VatAna` using `install_github` of `devtools` package as in the R code chunks below:
@@ -13,7 +13,7 @@ In order to install the package `VatAna` from the GitHub repository you should f
 if(!require(devtools)) {install.packages('devtools'); library(devtools)}
 install_github("zcebeci/VatAna")
 ```
-If you would like to have a compiled version of the vignettes of the package try to install the package `fcvalid` using `install_github` with `build_vignettes` argument set to TRUE as shown below:
+If you would like to have a compiled version of the vignettes of the package try to install the package `VatAna` using `install_github` with `build_vignettes` argument set to TRUE as shown below:
 
 ```{r}
 if(!require(devtools)) {install.packages('devtools'); library(devtools)}
@@ -47,7 +47,7 @@ browseVignettes("VatAna")
 ## Cite the package
 To cite the package please use one of the following items fits to your references list:
 
-Cebeci, Z. & Yildiz, F. (2015). Görsel Kümelenme Eğilimi Değerlendirmesi ve R'de Uygulaması. \emph{Cukurova Universitesi Ziraat Fakultesi Dergisi}, 30 (2), 1-8. 
+Cebeci, Z. & Yildiz, F. (2015). Görsel Kümelenme Eğilimi Değerlendirmesi ve R'de Uygulaması. *Çukurova Üniversitesi Ziraat Fakültesi Dergisi*, Vol. 30, No. 2, pp. 1-8. 
 (URL: [https://dergipark.org.tr/en/download/article-file/219860](https://dergipark.org.tr/en/download/article-file/219860))
 
 or in BibTeX format:
