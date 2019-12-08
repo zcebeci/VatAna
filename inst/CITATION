@@ -1,9 +1,9 @@
 year <- sub("-.*", "", meta$Date) 
 note <- sprintf("[R package version %s ]", meta$Version)
-textVersion = paste0("Cebeci, Z., Yildiz, F. (2015). Görsel Kümelenme Eğilimi Değerlendirmesi ve R’de Uygulaması. Ç.Ü. Ziraat Fak. Dergisi, 30(2), 1-8. URL: https://dergipark.org.tr/tr/download/article-file/219860. ", note, ", ")
+textVersion = paste0("Cebeci, Z., Yildiz, F. (2015). Gorsel Kumelenme Egilimi Degerlendirmesi ve R'de Uygulamasi. C.U. Ziraat Fak. Dergisi, 30(2), 1-8. URL: https://dergipark.org.tr/tr/download/article-file/219860. ", note, ", ")
 bibentry(textVersion, bibtype = "Article",
- title = "Görsel Kümelenme Eğilimi Değerlendirmesi ve R’de Uygulaması",
- journal = "Ç.Ü. Ziraat Fakültesi Dergisi",
+ title = "Gorsel Kumelenme Egilimi Degerlendirmesi ve R'de Uygulamasi",
+ journal = "C.U. Ziraat Fakultesi Dergisi",
  author = c(person("Zeynel", "Cebeci"), person("Figen", "Yildiz")),
  year = 2015,
  url = "https://dergipark.org.tr/tr/download/article-file/219860")
