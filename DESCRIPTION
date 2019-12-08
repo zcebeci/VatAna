@@ -1,0 +1,16 @@
+Package: VatAna
+Type: Package
+Title: Visual Assessment of Clustering Tendency for Finding the Number of Clusters in a Dataset
+Version: 0.1.0
+Date: 2019-12-13
+Encoding: latin1
+Authors@R: c(person("Zeynel", "Cebeci", email = "zcebeci@cukurova.edu.tr", role = c("aut", "cre"))) 
+Author: Zeynel Cebeci [aut, cre]
+Maintainer: Zeynel Cebeci <zcebeci@cukurova.edu.tr>
+Description: The partitioning algorithms require a priori estimate of number of clusters (k) as an input parameter, and thus the success of partitioning depends mostly on this parameter. In order to find an optimal estimation of k, the obtained results are checked by the cluster validity indices at the end of each run of successive cluster analyses. Unfortunately, this kind of cluster validation is time consuming task, and also depends on the clustering indices which may not guarantee the quality of clustering since their performances vary with complexity in data structures. In order to find an optimal  number  of  clusters  in  datasets, one  can  benefit  from the  preprocessing approaches like visual assessment of clustering tendency algorithm before  going to clustering session. The  visual assessment of clustering tendency (VAT) is a frontier algorithm which produces a gray-level image  of reordered distance  matrix showing existing clusters with dark blocks along the diagonal of it. This R package provides various functions related with VAT analysis and demonstrates its usage with the examples.
+Depends: R (>= 3.6.0)
+License: GPL (>= 2)
+LazyData: true
+Imports: graphics, grDevices, gtools
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
