@@ -48,7 +48,7 @@ browseVignettes("VatAna")
 To cite the package please use one of the following items fits to your references list:
 
 Cebeci, Z. & Yildiz, F. (2015). Görsel Kümelenme Eğilimi Değerlendirmesi ve R'de Uygulaması. \emph{Cukurova Universitesi Ziraat Fakultesi Dergisi}, 30 (2), 1-8. 
-(URL: \href{https://dergipark.org.tr/en/download/article-file/219860}{https://dergipark.org.tr/en/download/article-file/219860})
+(URL: [https://dergipark.org.tr/en/download/article-file/219860](https://dergipark.org.tr/en/download/article-file/219860))
 
 or in BibTeX format:
 ```
