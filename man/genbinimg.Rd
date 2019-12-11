@@ -6,7 +6,7 @@ genbinimg(nb=10, disp=TRUE, seed=NULL)
 }
 \arguments{
   \item{nb}{An integer describes the number of rectangle blocks to be generated on the diagonal of binary image.}
-  \item{disp}{A logical value whether generated binary image will be displayed or not. Default is TRUE.}
+  \item{disp}{A logical value whether generated binary image will be displayed or not. The default value is TRUE.}
   \item{seed}{An integer for reproducibility purpose. The default value is NULL.}
 }
 \description{
@@ -29,8 +29,10 @@ Cebeci, Z. & Yildiz, F. (2015). Gorsel Kumelenme Egilimi Degerlendirmesi ve R'de
 \author{Zeynel Cebeci}
 
 \seealso{
+ \code{\link{binimage}},
  \code{\link{findk}},
  \code{\link{findk2}},
+ \code{\link{greyimage}},
  \code{\link{vatimage}},
  \code{\link{vatdisp}}
 }

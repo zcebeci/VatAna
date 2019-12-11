@@ -37,20 +37,23 @@ Cebeci, Z. & Yildiz, F. (2015). Gorsel Kumelenme Egilimi Degerlendirmesi ve R'de
 
 \author{Zeynel Cebeci}
 \seealso{
+ \code{\link{binimage}},
  \code{\link{findk}},
  \code{\link{findk2}},
  \code{\link{genbinimg}},
+ \code{\link{greyimage}},
  \code{\link{vatdisp}}
 }
 
 \examples{
-# Load the dataset iris and use the first four feature columns 
+# Load the dataset protcarbo
 data(protcarbo)
-vatdisp(protcarbo, renk="cm", t=60)
+
 # Run vatimage to build ordered dissimilarities matrix 
-vatmat <- vatimage(x, disp=FALSE)$odm
+vatmat <- vatimage(protcarbo, disp=TRUE)$odm
+
 # Find the number of clusters
-k <- findk(vatmat, t=0.7)$k
+k <- findk(vatmat)$k
 print(k)
 }
 

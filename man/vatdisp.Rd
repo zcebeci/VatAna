@@ -1,14 +1,14 @@
 \name{vatdisp}
 \alias{vatdisp}
-\title{Plot the matrices of dissimilarities for VAT analysis}
+\title{Plot the dissimilarities matrices for VAT analysis}
 \usage{
-vatdisp(x, t=NULL, renk="grey", which=0)
+vatdisp(x, renk="grey", which=0, greylevel=256)
 }
 \arguments{
   \item{x}{A numeric matrix containing the data.}
-  \item{t}{A numeric threshold value for converting the ordered dissimilarities to a binary image matrix. The defauld is arithmetic mean of matrix.}
   \item{renk}{A character string to describe the name of color palette to be used in drawing the images. The options are \code{"cm", "gray", "heat", "terrain",} and \code{"topo"}. The default color pallette is \code{"grey"}.}
-  \item{which}{An integer indicates which type of image matrix displayed. The options are 1 for original dissimilarities matrix, 2 for ordered dissimilarities matrix and 3 for binary image matrix to be used for finding the clusters in the dataset x. The default is 0 for drawing all kind of images.}
+  \item{which}{An integer indicates the type of plot to be displayed. The options: 1 for histogram, 2 for original dissimilarities matrix, 3 for ordered dissimilarities matrix and 4 for binary image matrix to be used for finding the clusters in the dataset x. The default is 0 for displaying all of the images.}
+  \item{greylevel}{An integer between 2 and 256 for grey-level image of the ODM. Usual values are 16, 128, and 256. The default value is 256.}
 }
 \description{
   This function displays the images of dissimilarity matrices. 
@@ -16,10 +16,10 @@ vatdisp(x, t=NULL, renk="grey", which=0)
 \details{
  The images and plots are drew by the functions:
  \enumerate{
-  \item Scatter plot of the first two features in the dataset.
-  \item DI: Original dissimilarities image.
-  \item ODI: The ordered dissimilarities image.
-  \item BDI: Binary version of the ordered dissimilarities image.
+  \item Histogram of the original dissimilarities.
+  \item Image of original dissimilarities.
+  \item Image of the ordered dissimilarities.
+  \item Image of the binary version of the ordered dissimilarities.
   }
 }
 
@@ -35,21 +35,23 @@ Cebeci, Z. & Yildiz, F. (2015). Gorsel Kumelenme Egilimi Degerlendirmesi ve R'de
 \author{Zeynel Cebeci}
 
 \seealso{
+ \code{\link{binimage}},
  \code{\link{findk}},
  \code{\link{findk2}},
  \code{\link{genbinimg}},
- \code{\link{vatdisp}}
+ \code{\link{greyimage}},
+ \code{\link{vatimage}}
 }
 
 \examples{
-# Load the dataset iris and use the first four feature columns 
-data(iris)
-x <- iris[,-5]
-# Run vatimage to generate ODM
-vatmat <- vatimage(x, disp=TRUE)$odm
-# Find the number of clusters using ODM
-k <- findk(vatmat, t=0.70)$k
-print(k)
+# Load the dataset protcarbo
+data(protcarbo)
+
+# Display the images with default values
+vatdisp(protcarbo)
+
+# Display the ODM images with topo colors
+vatdisp(protcarbo, which=3, renk="topo")
 }
 
 \concept{visual assessment of clustering tendency}

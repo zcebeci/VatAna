@@ -27,7 +27,7 @@ vatimage <- function(x, normalize=FALSE, disp=TRUE){
   }
   odm <- D[P, rev(P)]
   if(disp)
-     image(odm, col = grey(seq(0, 1, length = 256)), 
+     image(odm, col=grey(seq(0, 1, length = 256)), 
         xlab = "", ylab = "", xaxt = "n", yaxt = "n", main = "Ordered Dissimilarities Image")
   return (list(odm=odm, dm=D))
 }

@@ -1,4 +1,4 @@
 exportPattern("^[^\\.]")
 import("graphics", "grDevices")
-importFrom("stats", "dist", "quantile")
+importFrom("stats", "sd", "dist", "quantile")
 importFrom("gtools", "permute")

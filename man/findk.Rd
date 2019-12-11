@@ -2,15 +2,14 @@
 \alias{findk}
 \title{Finding the number of overlapped and well-separated clusters in a dataset}
 \usage{
-findk(img, t=NULL, disp=FALSE)
+findk(img, disp=FALSE)
 }
 \arguments{
-  \item{img}{A numeric image matrix of the ordered dissimilarities, or a binary image matrix of ordered dissimilarities.} 
-  \item{t}{A number to be used as the threshold value between 0 and 255. It is used for converting the image of dissimilarties to a binary image. The default value is median of the image matrix.}
-  \item{disp}{A logical value whether binary image will be displayed or not. Default is TRUE.}
+  \item{img}{A numeric binary image matrix of the ordered dissimilarities. It can be produced by using the function binimage of the package.} 
+  \item{disp}{A logical value whether the binary image will be displayed or not. Default is TRUE.}
 }
 \description{
-Counts the well-separated and overlapping rectangular blocks tracing their edges. The count is proposed as the number of clusters for the given dataset.
+Counts the well-separated and overlapped rectangular blocks tracing their edges. The count is proposed as the number of clusters for the given dataset.
 }
 \details{
 Tracing the edges starts with the first cell on the last row of binary image matrix. The functions detects the corners of blocks and then changes the moving direction. 
@@ -29,8 +28,10 @@ Cebeci, Z. & Yildiz, F. (2015). Gorsel Kumelenme Egilimi Degerlendirmesi ve R'de
 \author{Zeynel Cebeci}
 
 \seealso{
+ \code{\link{binimage}},
  \code{\link{findk2}},
  \code{\link{genbinimg}},
+ \code{\link{greyimage}},
  \code{\link{vatimage}},
  \code{\link{vatdisp}}
 }
@@ -44,9 +45,11 @@ cat("Number of clusters detected:", k, "\n")
 # Load the dataset protocarbo 
 data(protcarbo) 
 # Obtain the VAT matrix 
-vatmat <- vatimage(protcarbo, disp=TRUE)$odm
+vatmat <- vatimage(protcarbo, disp=FALSE)$odm
+greymat <- greyimage(vatmat, greylevel=256)
+binmat <- binimage(greymat, method="auto")$binimg
 # Find the number of clusters
-k <- findk(vatmat, t=50, disp=TRUE)$k
+k <- findk(binmat, disp=TRUE)$k
 cat("Number of clusters detected:", k, "\n")
 }
 

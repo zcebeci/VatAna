@@ -2,18 +2,17 @@
 \alias{findk2}
 \title{Finding the well-seperated clusters in a dataset}
 \usage{
-findk2(img, t=NULL, disp=TRUE)
+findk2(img, disp=TRUE)
 }
 \arguments{
-  \item{img}{A numeric matrix containing the ordered dissimilarities or a binary image matrix of dissimilarities.}
-  \item{t}{A integer threshold value between 0 and 255. It is used for converting an image to binary image. The default value is the median of dissimilarities matrix.}
-  \item{disp}{A logical value whether the binary image will be displayed or not. Default is TRUE.}
+  \item{img}{A binary image matrix of dissimilarities. It is produced by using the function binimage.}
+  \item{disp}{A logical value whether the binary image will be displayed or not. The default value is TRUE.}
 }
 \description{
-Counts the rectangular blocks by moving the diagonal of a binary image. The count is returned as the number of well-separated clusters in the given dataset.
+Counts the rectangular blocks by moving the diagonal of a binary image. The count is returned as the estimation of the number of well-separated clusters for the given dataset.
 }
 \details{
-This function evaluates the overlapped rectangle blocks as a single cluster.
+This function counts the overlapped rectangle blocks as one block.
 }
 
 \value{
@@ -28,19 +27,23 @@ Cebeci, Z. & Yildiz, F. (2015). Gorsel Kumelenme Egilimi Degerlendirmesi ve R'de
 \author{Zeynel Cebeci}
 
 \seealso{
+ \code{\link{binimage}},
  \code{\link{findk}},
  \code{\link{genbinimg}},
+ \code{\link{greyimage}},
  \code{\link{vatimage}},
  \code{\link{vatdisp}}
 }
 
 \examples{
-# Load the dataset protocarbo 
+# Load the dataset protcarbo 
 data(protcarbo) 
 # Obtain the ODM matrix for VAT analysis
 vatmat <- vatimage(protcarbo, disp=TRUE)$odm
+greymat <- greyimage(vatmat, greylevel=256)
+binmat <- binimage(greymat, method="otsu")$binimg
 # Find the number of clusters
-k <- findk2(vatmat, t=50, disp=TRUE)
+k <- findk2(binmat, disp=TRUE)
 cat("Number of clusters detected:", k, "\n")
 }
 

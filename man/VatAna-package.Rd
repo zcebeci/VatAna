@@ -14,11 +14,16 @@ The function  \code{\link[VatAna:vatimage]{VatAna::vatimage}} of the package bui
 
 The function \code{\link[VatAna:vatdisp]{VatAna::vatdisp}} displays all or any of dissimilarities images such as DM, ODM or BDM.
 
+The function \code{\link[VatAna:greyimage]{VatAna::greyimage}} generates and displays a greyscale dissimilarities matrix.
+
+The function \code{\link[VatAna:binimage]{VatAna::binimage}} generates and displays a binary dissimilarities matrix. The argument \code{method} is used to assign a thresholding method such as \code{'otsu'}, \code{'auto'},
+\code{'median'}, \code{'fixed'} and \code{'quant'}. 
+
 The function \code{\link[VatAna:findk]{VatAna::findk}} counts the dark blocks by moving the edges of them as described by Cebeci and Yildiz (2015). The counted number of blocks is proposed as the number of clusters in the examined dataset.  
 
 The function \code{\link[VatAna:findk2]{VatAna::findk2}} counts the dark blocks by moving the diagonal of ODM of them as described by Cebeci and Yildiz (2015). This function can not discrimnate the overlapped blocks and finds less number of blocks than the function \code{findk}. The counted number of blocks is proposed as the number of clusters for the examined dataset.  
 
-For test purposes, the function \code{\link[VatAna:genbinimg]{VatAna::genbinimg}} generates the artificial binary images containing a number of user-defined blocks.
+For testing purposes, the function \code{\link[VatAna:genbinimg]{VatAna::genbinimg}} generates the artificial binary images containing a number of user-defined blocks.
 
 The package also contains a dataset named \code{\link[VatAna:protcarbo]{VatAna::protcarbo}}, has 3 actual clusters with 2 variables and 15 rows. It can be used for testing the success to find the optimal numbcer of cluster using different threshold levels in generation of binary image matrices.
 
@@ -41,9 +46,12 @@ Cebeci, Z., Kavlak, A. T. & Yildiz, F. (2017). Validation of fuzzy and possibili
 \author{Zeynel Cebeci}
 
 \seealso{
+ \code{\link{binimage}},
  \code{\link{findk}},
  \code{\link{findk2}},
  \code{\link{genbinimg}},
+ \code{\link{greyimage}},
+ \code{\link{protcarbo}},
  \code{\link{vatimage}},
  \code{\link{vatdisp}}
 }

@@ -4,15 +4,12 @@
 \usage{
 data(protcarbo)
 }
-\arguments{
-No input argument is required.
-}
 \description{
 The foods can be clustered using the components of nutritional matters. This dataset contains protein and carbohdyrate content of various daily consumed foods.
 }
 \details{
  \itemize{
-   \item{energy: Energy content of food (kCal)}
+   \item{energy: Energy content of food (kCal/100g)}
    \item{protein: Protein content of food (g/100g)}
  }
 }
@@ -29,22 +26,20 @@ Cebeci, Z. & Yildiz, F. (2015). Gorsel Kumelenme Egilimi Degerlendirmesi ve R'de
 \author{Zeynel Cebeci}
 
 \seealso{
+ \code{\link{binimage}},
  \code{\link{findk}},
  \code{\link{findk2}},
- \code{\link{vatimage}},
- \code{\link{vatdisp}},
  \code{\link{genbinimg}},
+ \code{\link{greyimage}},
+ \code{\link{vatimage}},
  \code{\link{vatdisp}}
 }
 
 \examples{
 # Load the dataset protcarbo 
+str(protcarbo)
 data(protcarbo) 
 head(protcarbo)
-# Build the ODM matrix for VAT analysis
-vatmat <- vatimage(protcarbo, disp=FALSE)$odm
-# Display ODM, the image ordered dissimilarities matrix
-image(vatmat)
 }
 
 \concept{visual assessment of clustering tendency}
